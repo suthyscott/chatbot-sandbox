@@ -2,9 +2,10 @@ import express from 'express'
 import ViteExpress from 'vite-express'
 import session from 'express-session'
 import dotenv from 'dotenv'
+import {Log} from './models/log.js'
 dotenv.config()
 const {PORT, SECRET} = process.env
-import ctrl from './controller'
+import ctrl from './controller.js'
 const {addLog} = ctrl
 
 const app = express()
@@ -23,4 +24,4 @@ app.use(session({
 app.post('/api/log', addLog)
 
 
-ViteExpress.listen(app, PORT, () => console.log(`Take use to warp ${4545}`))
+ViteExpress.listen(app, PORT, () => console.log(`Take us to warp ${4545}`))
